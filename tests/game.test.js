@@ -305,3 +305,26 @@ describe('checkWinner — result shape', () => {
     });
   });
 });
+
+// ---------------------------------------------------------------------------
+// displaySymbol
+// ---------------------------------------------------------------------------
+
+describe('displaySymbol', () => {
+  test('X converts to cat emoji', () => {
+    expect(displaySymbol('X')).toBe('🐱');
+  });
+
+  test('O converts to dog emoji', () => {
+    expect(displaySymbol('O')).toBe('🐶');
+  });
+
+  test('empty string remains empty', () => {
+    expect(displaySymbol('')).toBe('');
+  });
+
+  test('returns correct emoji for each symbol consistently', () => {
+    expect(displaySymbol('X')).toBe(displaySymbol('X'));
+    expect(displaySymbol('O')).toBe(displaySymbol('O'));
+  });
+});
